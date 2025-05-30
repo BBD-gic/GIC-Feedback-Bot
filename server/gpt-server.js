@@ -272,6 +272,9 @@ app.post("/next-question", async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("👋 Hello! This is the Feedback Bot backend. Use /next-question to talk to the bot.");
+});
 
 app.listen(4000, () => {
   console.log("✅ Feedback Bot server running at http://localhost:4000");
