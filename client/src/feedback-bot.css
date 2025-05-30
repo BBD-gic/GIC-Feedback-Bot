@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.chat-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url("/public/bg-laptop.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  backdrop-filter: blur(2px);
+  position: relative;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 3%;
+  /* background: #1d1d1d9d; */
+  background: #ffffffe7;
+  color: #000000;
+  z-index: 2;
+}
+
+.chat-header img {
+  height: 70px;
+  width: 70px;
+  /* border-radius: 50%; */
+  /* background: #fff; */
+}
+
+.chat-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-left: 12px;
+}
+
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: filter 0.3s;
+  /* New translucent box styling */
+  width: 70%;
+  margin: 50px auto 30px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+.chat-window::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+  background-color: #2f2f2f78;
+  border-radius: 3px;
+}
+
+.chat-window.blurred {
+  filter: blur(3px) grayscale(0.1);
+  pointer-events: none;
+}
+
+.chat-bubble {
+  max-width: 85%;
+  padding: 4px 21px;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.6;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+  word-wrap: break-word;
+  font-family: 'Nunito', sans-serif;
+}
+
+.chat-bubble.bot {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.5);
+  border-bottom-left-radius: 0px;
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background: #00000057;
+  color: #ffffff;
+  border-bottom-right-radius: 0px;
+}
+
+.chat-input {
+  position: relative;
+  padding: 30px 4% 40px;
+  z-index: 2;
+}
+
+.chat-input input {
+  width: 100%;
+  padding: 13px 60px 13px 20px;
+  /* right padding for button space */
+  font-size: 1rem;
+  border-radius: 32px;
+  outline: none;
+  font-family: 'Nunito', sans-serif;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chat-input input::placeholder {
+  color: #4a4a4a;
+}
+
+.send-button {
+  position: absolute;
+  right: 5.5%;
+  top: 46%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+
+.send-button:hover {
+  transform: translateY(-50%) scale(1.15) rotate(-5deg);
+}
+
+
+.typing {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  padding: 13px 20px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ebebeb;
+  border-radius: 50%;
+  animation: bounce 1.3s infinite ease-in-out;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+  background-color: #838383;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+  background-color: #0a0a0a;
+}
+
+@keyframes bounce {
+
+  0%,
+  80%,
+  100% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+
+  40% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+
+/* === Thank You Popup === */
+.thank-you-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  max-width: 750px;
+  height: 280px;
+  /* Increased height */
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(40px);
+  /* Stronger blur */
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0;
+  z-index: 10;
+  display: flex;
+  overflow: hidden;
+  font-family: 'Nunito', sans-serif;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Logo area (2/5th) */
+.popup-logo {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-logo img {
+  width: 80%;
+  max-width: 160px;
+  height: auto;
+  border-radius: 1rem;
+}
+
+/* Text area (3/5th) */
+.popup-text {
+  flex: 3;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #333;
+}
+
+.popup-text h2 {
+  font-size: 2.2rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.popup-text p {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #555;
+}
+
+
+/* === Responsive Adjustments === */
+@media screen and (max-width: 600px) {
+
+  .chat-container {
+    background-image: url("/public/bg-phone.png");
+  }
+
+  .chat-header {
+    background: #ffffffeb;
+    padding: 0px 5%;
+  }
+
+  .chat-header img {
+    height: 70px;
+    width: 70px;
+  }
+
+  .chat-title {
+    font-size: 1.9rem;
+    margin-right: 1%;
+  }
+
+  .chat-window {
+    width: 100%;
+    padding: 20px 16px;
+    border-radius: 0px;
+    gap: 12px;
+    background: none;
+    backdrop-filter: none;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    margin: 0px;
+  }
+
+
+  .chat-bubble {
+    font-size: 1.1rem;
+    padding: 8px 18px;
+  }
+
+  .chat-bubble.bot {
+    background: rgba(255, 255, 255, 0.842);
+  }
+
+  .chat-bubble.user {
+    background: #000000bc;
+    color: #ffffff;
+  }
+
+  .typing {
+    padding: 13px 16px;
+  }
+
+  .chat-input input {
+    border-radius: 10px;
+  }
+
+  .send-button {
+    right: 7%;
+  }
+
+  .thank-you-popup {
+    flex-direction: column;
+    width:80%;
+    height: auto;
+  }
+
+  .popup-logo {
+    width: 100%;
+    background: none;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+    padding: 1.2rem 1rem;
+  }
+
+  .popup-logo img {
+    width: 50%;
+    max-width: 120px;
+    height: auto;
+  }
+
+  .popup-text {
+    padding: 0;
+    text-align: center;
+    padding: 1.2rem 1rem;
+  }
+
+  .popup-text h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .popup-text p {
+    font-size: 1rem;
+  }
+
+}
