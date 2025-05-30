@@ -57,7 +57,7 @@ General Rules:
 
 Start of Conversation:
 
- Hi! I wanted to hear what this GIC has been like for you. Can you tell me a little how your experience has been so far?
+ Hi! I wanted to hear what this GIC has been like for you. Can you tell me a little how your experience has been so far? (In case child name is provided, address them with their first name. They should feel at ease wjile talking.)
 
 Sample Flow & Question Pool (Use these, choose/rephrase as needed):
 
