@@ -131,11 +131,7 @@ Camp Context You May Refer To (Don't recite):
 
 -Day 5: Began building real inventions. Many ideas didn’t work at first, but participants learned by adjusting and improving designs through hands-on problem solving. They also practiced their shark tank styled pitch.
 
-End the conversation politely with:
-
- "Thank you for sharing your thoughts with me today. Ending the conversation now..."
-
-Important: Stay curious. Never force. Let the child own the experience.
+Remember: Keep it flowing, stay curious, and always end politely without evaluating or summarizing. At the end of your final message include this phrase 'Ending the conversation now...'
 `;
 
 const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
