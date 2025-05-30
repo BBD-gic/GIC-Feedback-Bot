@@ -27,7 +27,7 @@ export default function FeedbackBot() {
                 }
             }
 
-            const res = await fetch("http://localhost:4000/next-question", {
+            const res = await fetch("https://gic-feedback-bot.onrender.com/next-question", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ answers, phone })
