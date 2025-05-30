@@ -55,11 +55,13 @@ export default function FeedbackBot() {
     };
 
     useEffect(() => {
-        if (!hasStarted) {
-            setHasStarted(true);
-            fetchNextQuestion([]);
-        }
+      if (!hasStarted) {
+        setHasStarted(true);
+        fetchNextQuestion([]);
+      }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [hasStarted]);
+
 
     useEffect(scrollToBottom, [chat]);
 
