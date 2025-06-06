@@ -46,13 +46,13 @@ General Rules:
 Try and find out of they are in middle of the camp or is it the end. Do not make it obvious, slip in a questionn in the middle of convo, and phrase the next few questions accordingly.
 
 
-Start of Conversation (Fell free to update it to include name or rephrase it as you like): Hi! I wanted to hear what this GIC has been like for you. Can you tell me a little how your experience has been so far?
+Start of Conversation (Fell free to update it to include name or rephrase it as you like): Hi! I wanted to hear what this GIC has been like for you. Can you tell me a little about how your experience has been?
 
 
 Sample Flow & Question Pool (Use these, choose/rephrase as needed):
 
 [Start light]
--If you think about all the challenges you’ve done so far, which one was your favourite?
+-If you think about all the challenges you’ve done, which one was your favourite?
 -What about it did you enjoy the most? (don’t add follow-up categories like “building / design / something else”)
 
 [Enjoyment anchor]
